@@ -1,9 +1,5 @@
 {% extends 'base.html' %}
-{% block head %}
-<meta charset="utf-8">
-    <title>Разговоры и важном</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
+{% block style %}
 .site-header{
   text-align: right;
   color: #ffffff;
@@ -49,7 +45,6 @@ ul.hr li {
     display: inline;
     margin-right: 5px;
 }
-    </style>
 {% endblock %}
 {% block body %}
 <header class="site-header">
@@ -92,7 +87,4 @@ ul.hr li {
 Комментарии:
     </p>
     </section>
-
-    <footer class="site-footer">
-    </footer>
 {% endblock %}

@@ -1,9 +1,5 @@
 {% extends 'base.html' %}
-{% block head %}
-<meta charset="utf-8">
-    <title>Разговоры и важном</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
+{% block style %}
 .site-header{
   text-align: right;
   color: #ffffff;
@@ -49,9 +45,7 @@ ul.hr li {
     display: inline;
     margin-right: 5px;
 }
-    </style>
 {% endblock %}
-
 {% block body %}
 <header class="site-header">
     <ul class="hr">
@@ -67,16 +61,13 @@ ul.hr li {
     <section class="advantages">
       <ul class="advantages-list">
         <li class="advantages-item standard">День земли</li>
-          <img src="img\big_cover_03_earthday.png" width="310" height="210">
+        <img src="img\big_cover_03_earthday.png" width="310" height="210">
         <li class="advantages-item standard">День космонавтики</li>
-          <img src="img\big_cover_10_spaceday2.png" width="310" height="210">
+        <img src="img/big_cover_10_spaceday2.png" width="310" height="210">
         <li class="advantages-item standard">Медиаграмотность и цифровая гигиена</li>
-          <img src="img\big_cover_23_media.png" width="310" height="210">
+        <img src="img/big_cover_23_media.png" width="310" height="210">
         <li class="advantages-item standard">День музыки</li>
-          <img src="img\big_cover_17_october.png" width="310" height="210">
+        <img src="img/big_cover_17_october.png" width="310" height="210">
       </ul>
     </section>
-
-    <footer class="site-footer">
-    </footer>
 {% endblock %}

@@ -1,9 +1,5 @@
 {% extends 'base.html' %}
-{% block head %}
-<meta charset="utf-8">
-    <title>Разговоры и важном</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
+{% block style %}
 .site-header{
   text-align: left;
   font-size: 19px
@@ -27,31 +23,23 @@ ul.hr li {
     display: inline;
     margin-right: 5px;
 }
-    </style>
 {% endblock %}
 {% block body %}
 <header class="site-header">
-      <p>Вход:</p>
-    </header>
-
-    <section class="advantages">
-<div>
-<p><span class="colortext">*</span>Почта</p>
-<form method="post" action="handler.php">
-   <p class="g"><textarea name="mail" cols="50" rows="1">
-   </textarea></p>
-</form>
-<p><span class="colortext">*</span>Пароль</p>
-<form method="post" action="handler.php">
-   <p><textarea name="password" cols="50" rows="1">
-   </textarea></p>
-</div>
-<ul class="hr">
-   <li><input type="button" value="Отмена"></li>
-   <li><input type="button" value="Ок"></li>
-  </ul>
-    </section>
-
-    <footer class="site-footer">
-    </footer>
+    <p>Вход:</p>
+</header>
+<section class="advantages">
+    <p><span class="colortext">*</span>Почта</p>
+    <form method="post" action="handler.php">
+        <p class="g"><textarea name="mail" cols="50" rows="1"></textarea></p>
+    </form>
+    <p><span class="colortext">*</span>Пароль</p>
+    <form method="post" action="handler.php">
+       <p><textarea name="password" cols="50" rows="1">
+       </textarea></p>
+    <ul class="hr">
+       <li><input type="button" value="Отмена"></li>
+       <li><input type="button" value="Ок"></li>
+    </ul>
+</section>
 {% endblock %}
