@@ -2,7 +2,7 @@ import flask
 from flask import jsonify, request
 
 from . import db_session
-from .news import News
+from .cosmo_news import Cosmo_News
 
 blueprint = flask.Blueprint(
     'news_api',
@@ -14,7 +14,7 @@ blueprint = flask.Blueprint(
 @blueprint.route('/api/news')
 def get_news():
     db_sess = db_session.create_session()
-    news = db_sess.query(News).all()
+    news = db_sess.query(Cosmo_News).all()
     return jsonify(
         {
             'news':
@@ -32,7 +32,7 @@ def create_news():
                  ['title', 'content', 'user_id', 'is_private']):
         return jsonify({'error': 'Bad request'})
     db_sess = db_session.create_session()
-    news = News(
+    news = Cosmo_News(
         title=request.json['title'],
         content=request.json['content'],
         user_id=request.json['user_id'],
@@ -46,7 +46,7 @@ def create_news():
 @blueprint.route('/api/news/<int:news_id>', methods=['DELETE'])
 def delete_news(news_id):
     db_sess = db_session.create_session()
-    news = db_sess.query(News).get(news_id)
+    news = db_sess.query(Cosmo_News).get(news_id)
     if not news:
         return jsonify({'error': 'Not found'})
     db_sess.delete(news)
@@ -57,7 +57,7 @@ def delete_news(news_id):
 @blueprint.route('/api/news/<int:news_id>', methods=['GET'])
 def get_one_news(news_id):
     db_sess = db_session.create_session()
-    news = db_sess.query(News).get(news_id)
+    news = db_sess.query(Cosmo_News).get(news_id)
     if not news:
         return jsonify({'error': 'Not found'})
     return jsonify(
