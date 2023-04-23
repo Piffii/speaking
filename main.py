@@ -71,6 +71,11 @@ def login():
     return render_template('login.html', title='Авторизация', form=form)
 
 
+@app.route('/cosmoexample')
+def cosmo():
+    return render_template('cosmoexample.html')
+
+
 @app.route('/logout')
 @login_required
 def logout():

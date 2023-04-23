@@ -15,10 +15,7 @@
 }
 
 .features {
-  width: 510px;
-  margin: 0 auto 30px;
   text-align: center;
-  font-size: 18px;
 }
 
 .advantages-list {
@@ -46,16 +43,26 @@ ul.hr li {
     display: inline;
     margin-right: 5px;
 }
+
+.color {
+  color: blue;
+  font-size: 20px;
+}
     </style>
 {% endblock %}
 {% block content %}
-<h1>Темы</h1>
+<h1 class="features">Темы</h1>
+<div>
 <section class="advantages">
-<ul class="advantages-list">
-    <li class="advantages-item standard">День земли</li>
-    <li class="advantages-item standard">День космонавтики</li>
-    <li class="advantages-item standard">Медиаграмотность и цифровая гигиена</li>
-    <li class="advantages-item standard">День музыки</li>
-</ul>
-    </section>
+    <p>
+        <ul class="advantages-list">
+            <li><a class="btn color" href="/cosmoexample">День День космонавтики</a></li>
+            <img src="cosmo.png" alt="">
+            <li><a class="btn color" href="/cosmoexample">День земли</a></li>
+            <li><a class="btn color" href="/cosmoexample">Медиаграмотность и цифровая гигиена</a></li>
+            <li><a class="btn color" href="/cosmoexample">День музыки</a></li>
+        </ul>
+    </p>
+</section>
+</div>
 {% endblock %}

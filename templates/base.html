@@ -13,17 +13,14 @@
 <body>
 <header>
     <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">Наше приложение</a>
+        <a class="navbar-brand" href="#">Кто ты?</a>
         {% if current_user.is_authenticated %}
     <a class="navbar-brand" href="/logout">{{ current_user.name }}</a>
 {% else %}
     <p>
-        <a class="btn btn-primary " href="/register">Зарегистрироваться</a>
-        <a class="btn btn-success" href="/login">Войти</a>
+        <a class="btn" href="/register">Зарегистрироваться</a>
+        <a class="btn" href="/login">Войти</a>
     </p>
-{% endif %}
-        {% if current_user.is_authenticated %}
-    <a href="news" class="btn btn-secondary">Добавить новость</a>
 {% endif %}
     </nav>
 </header>
