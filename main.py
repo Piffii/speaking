@@ -32,6 +32,7 @@ def index():
         news = db_sess.query(News).filter(News.is_private != True)
     return render_template("index.html", news=news)
 
+
 @app.route('/register', methods=['GET', 'POST'])
 def reqister():
     form = RegisterForm()
@@ -75,6 +76,21 @@ def login():
 @app.route('/cosmoexample')
 def cosmo():
     return render_template('cosmoexample.html')
+
+
+@app.route('/earthexample')
+def earth():
+    return render_template('earthexample.html')
+
+
+@app.route('/oneexample')
+def one():
+    return render_template('oneexample.html')
+
+
+@app.route('/yearexample')
+def year():
+    return render_template('yearexample.html')
 
 
 @app.route('/logout')
