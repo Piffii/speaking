@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{%block style %}
+<style>
+.site-header{
+  text-align: right;
+  color: #ffffff;
+}
+
+.registration{
+    color: blue;
+}
+
+.come{
+    color: red;
+}
+
+.features {
+  width: 510px;
+  margin: 0 auto 30px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.advantages-list {
+  padding: 0;
+  list-style: 20;
+  text-align: left;
+}
+
+.advantages-item {
+  margin-bottom: 15px;
+  padding-left: 20px;
+  border-left: 20px solid #e2e2e2;
+  color: #999999;
+}
+
+.standard {
+  border-color: #091F92;
+}
+
+ul.hr {
+    margin: 0;
+    padding: 4px;
+}
+ul.hr li {
+    display: inline;
+    margin-right: 5px;
+}
+    </style>
+{% endblock %}
+{% block content %}
+<h1>Темы</h1>
+<section class="advantages">
+<ul class="advantages-list">
+    <li class="advantages-item standard">День земли</li>
+    <li class="advantages-item standard">День космонавтики</li>
+    <li class="advantages-item standard">Медиаграмотность и цифровая гигиена</li>
+    <li class="advantages-item standard">День музыки</li>
+</ul>
+    </section>
+{% endblock %}

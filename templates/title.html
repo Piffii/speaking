@@ -1,6 +1,11 @@
-{% extends 'base.html' %}
-{% block style %}
-.site-header{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Разговоры о важном</title>
+    <link rel="stylesheet" href="stule.css">
+    <style>
+    .site-header{
   text-align: right;
   color: #ffffff;
 }
@@ -45,8 +50,9 @@ ul.hr li {
     display: inline;
     margin-right: 5px;
 }
-{% endblock %}
-{% block body %}
+    </style>
+</head>
+<body>
 <header class="site-header">
     <ul class="hr">
          <li><input type="button" value="Регистрация"></li>
@@ -70,4 +76,5 @@ ul.hr li {
         <img src="img/big_cover_17_october.png" width="310" height="210">
       </ul>
     </section>
-{% endblock %}
+</body>
+</html>

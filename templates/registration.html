@@ -1,5 +1,10 @@
-{% extends 'base.html' %}
-{% block style %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Разговоры и важном</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
 .site-header{
   text-align: left;
   font-size: 19px
@@ -23,9 +28,10 @@ ul.hr li {
     display: inline;
     margin-right: 5px;
 }
-{% endblock %}
-{% block body %}
-<header class="site-header">
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
       <p>Регистрация:</p>
     </header>
 
@@ -57,4 +63,8 @@ ul.hr li {
    <li><input type="button" value="Ок"></li>
   </ul>
     </section>
-{% endblock %}
+
+    <footer class="site-footer">
+    </footer>
+  </body>
+</html>
