@@ -3,9 +3,6 @@ from flask_restful import Api
 
 from data import db_session, news_api, news_resources
 from data.cosmo_news import Cosmo_News
-from data.earth_news import Earth_News
-from data.day_news import Day_News
-from data.new_year_news import New_Year_News
 from data.users import User
 from forms.comments import NewsForm
 from forms.user import RegisterForm, LoginForm
@@ -79,23 +76,17 @@ def cosmo():
 
 @app.route('/earthexample')
 def earth():
-    db_sess = db_session.create_session()
-    news = db_sess.query(Earth_News)
-    return render_template('earthexample.html', news=news)
+    return render_template('earthexample.html')
 
 
 @app.route('/oneexample')
 def one():
-    db_sess = db_session.create_session()
-    news = db_sess.query(Day_News)
-    return render_template('oneexample.html', news=news)
+    return render_template('oneexample.html')
 
 
 @app.route('/yearexample')
 def year():
-    db_sess = db_session.create_session()
-    news = db_sess.query(New_Year_News)
-    return render_template('yearexample.html', news=news)
+    return render_template('yearexample.html')
 
 
 @app.route('/logout')
@@ -127,54 +118,6 @@ def add_cosmo_news():
         db_sess.merge(current_user)
         db_sess.commit()
         return redirect('/cosmoexample')
-    return render_template('comment.html', title='Добавление комментария',
-                           form=form)
-
-
-@app.route('/earthexample/comment',  methods=['GET', 'POST'])
-@login_required
-def add_earth_news():
-    form = NewsForm()
-    if form.validate_on_submit():
-        db_sess = db_session.create_session()
-        news = Earth_News()
-        news.content = form.content.data
-        current_user.news.append(news)
-        db_sess.merge(current_user)
-        db_sess.commit()
-        return redirect('/earthexample')
-    return render_template('comment.html', title='Добавление комментария',
-                           form=form)
-
-
-@app.route('/oneexample/comment',  methods=['GET', 'POST'])
-@login_required
-def add_day_news():
-    form = NewsForm()
-    if form.validate_on_submit():
-        db_sess = db_session.create_session()
-        news = Day_News()
-        news.content = form.content.data
-        current_user.news.append(news)
-        db_sess.merge(current_user)
-        db_sess.commit()
-        return redirect('/oneexample')
-    return render_template('comment.html', title='Добавление комментария',
-                           form=form)
-
-
-@app.route('/yearexample/comment',  methods=['GET', 'POST'])
-@login_required
-def add_new_year_news():
-    form = NewsForm()
-    if form.validate_on_submit():
-        db_sess = db_session.create_session()
-        news = New_Year_News()
-        news.content = form.content.data
-        current_user.news.append(news)
-        db_sess.merge(current_user)
-        db_sess.commit()
-        return redirect('/yearexample')
     return render_template('comment.html', title='Добавление комментария',
                            form=form)
 

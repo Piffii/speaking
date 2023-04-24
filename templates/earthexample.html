@@ -89,20 +89,6 @@ ul.hr li {
 <hr align="center" width="100%" size="3" color="#dddddd" />
     </section>
     <p>
-Комментарии:
-{% for item in news%}
-<div class="col-md6 border rounded">
-    <div>
-        {{item.content}}
-    </div>
-    <div>
-        Автор - {{item.user.name}}, Дата написания - {{item.created_date}}
-    </div>
-</div>
-{% endfor %}
-    </p>
+Без комментариев
 <p><a class="btn btn-secondary" href="/">Назад</a></p>
-{% if current_user.is_authenticated %}
-    <a href="earthexample/comment" class="btn btn-secondary">Добавить комментарий</a>
-{% endif %}
 {% endblock %}
