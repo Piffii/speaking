@@ -114,7 +114,7 @@ def add_cosmo_news():
         db_sess = db_session.create_session()
         news = Cosmo_News()
         news.content = form.content.data
-        current_user.news.append(news)
+        current_user.cosmo_news.append(news)
         db_sess.merge(current_user)
         db_sess.commit()
         return redirect('/cosmoexample')

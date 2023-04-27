@@ -20,6 +20,7 @@ class User(SqlAlchemyBase, UserMixin, SerializerMixin):
     hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     created_date = sqlalchemy.Column(sqlalchemy.DateTime,
                                      default=datetime.datetime.now)
+    cosmo_news = orm.relationship("Cosmo_News", back_populates='user', lazy='subquery')
 
     def __repr__(self):
         return str(self.id) + ' ' + self.name + ' ' + self.email
